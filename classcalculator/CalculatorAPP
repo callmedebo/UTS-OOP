@@ -1,0 +1,92 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package soalnoa;
+
+import javax.swing.JOptionPane;
+import java.util.Scanner;
+import java.io.*;
+import java.text.DecimalFormat;
+
+/**
+ *
+ * @author Debora Marianthi
+ */
+public class CalculatorApp extends Calculator {
+public static void main(String[] args) {
+    String name="";
+    name=JOptionPane.showInputDialog("Please enter your name");
+    String msg = "Hello " + name + "!";
+    JOptionPane.showMessageDialog (null, msg);
+    CalculatorApp cal = new CalculatorApp();
+    cal.simpleMessage (name);
+    Scanner input = new Scanner (System.in);
+    
+    int choose;
+    String X = JOptionPane.showInputDialog("Input Nilai X =  ");
+    String Y = JOptionPane.showInputDialog("Input Nilai Y =  ");
+    float A = Float.parseFloat(X);
+    float B = Float.parseFloat(Y);
+        do{
+            System.out.println("Program Menghitung Kalkulator Sederhana by Debora Marianthi");
+            System.out.println("1. Penjumlahan");
+            System.out.println("2. Pengurangan");
+            System.out.println("3. Perkalian");
+            System.out.println("4. Pembagian");
+            System.out.println("5. Modulus");
+            System.out.println("0. Exit");
+            System.out.println("------------------------------ ");
+            System.out.println("\nMasukkan pilihan kamu :  ");
+            choose = input.nextInt();
+            System.out.println();
+    
+    
+        switch(choose){
+        case 0: {
+                System.out.println("Coba Lagi");
+                break;
+        }
+    
+        case 1:{
+            float jumlah = A + B;
+            System.out.println("Penjumlahan  " + A + " + " + B + " = " + jumlah);
+            break;
+        }
+        case 2:{
+            float jumlah = A - B;
+            System.out.println("Pengurangan  " + A + " - " + B + " = " + jumlah);
+            break;
+        }
+        case 3:{
+            float jumlah = A * B;
+            System.out.println("Perkalian  " + A + " * " + B + " = " + jumlah);
+            break;
+        }
+        case 4:{
+            float jumlah = A / B;
+            System.out.println("Pembagian  " + A + " / " + B + " = " + jumlah);
+            break;
+        }
+        case 5:{
+            float jumlah = A % B;
+            System.out.println("Modulus  " + A + " % " + B + " = " + jumlah);
+            break;
+        }
+        
+        default:
+            System.out.println("Pilihan Anda Salah");
+        
+        break;
+                               
+        }
+                 
+        if (choose !=0){
+        System.out.println();
+        }
+                 
+    }while (choose !=0);
+    input.close();
+  }            
+}
