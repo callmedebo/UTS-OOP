@@ -1,0 +1,92 @@
+package soalnob;
+
+/**
+ *
+ * @author Debora Marianthi
+ */
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner input = new Scanner (System.in);
+        int rusuk, panjang, lebar, tinggi, rusuksisitegak;
+        BangunRuang kbl;
+        int pilihan = 0;
+        do{
+            System.out.println("Program Menghitung Bangun Ruang by Debora Marianthi");
+            System.out.println("1. Keliling dan Volume Kubus");
+            System.out.println("2. Keliling dan Volume Balok");
+            System.out.println("3. Keliling dan Volume Limas Persegi Panjang");
+            System.out.println("0. Exit");
+            System.out.println("------------------------------ ");
+            System.out.println("\nMasukkan pilihan kamu :  ");
+            pilihan = input.nextInt();
+                 
+            System.out.println();
+            switch(pilihan){
+                case 0: {
+                System.out.println("Coba Lagi");
+                break;
+                }
+                     
+                case 1: {
+                System.out.println("Masukkan Panjang Rusuk : ");
+                rusuk = input.nextInt();
+                
+                kbl = new Kubus(rusuk);
+                System.out.println("\nKeliling Kubus : "+kbl.keliling());
+                System.out.println("\nVolume Kubus : "+kbl.keliling());
+               
+                break;
+                }
+                     
+                case 2:{
+                System.out.println("Masukkan Panjang Balok : ");
+                panjang = input.nextInt();
+                         
+                System.out.println("Masukkan Lebar Balok : ");
+                lebar = input.nextInt();
+                         
+                System.out.println("Masukkan Tinggi Balok : ");
+                tinggi = input.nextInt();
+                
+                kbl = new Balok (panjang, lebar, tinggi);
+                System.out.println("\nKeliling Balok : "+kbl.keliling());
+                System.out.println("\nVolume Balok : "+kbl.keliling());
+                
+                break;
+                }
+                
+                case 3:{
+                System.out.println("Masukkan Panjang Limas Persegi Panjang : ");
+                panjang = input.nextInt();
+                         
+                System.out.println("Masukkan Lebar Limas Persegi Panjang : ");
+                lebar = input.nextInt();
+                         
+                System.out.println("Masukkan Tinggi Limas Persegi Panjang : ");
+                tinggi = input.nextInt();
+                         
+                System.out.println("Masukkan Tinggi Rusuk Sisi Tegak : ");
+                rusuksisitegak = input.nextInt();
+                
+                kbl = new LimasPersegiPanjang (panjang, lebar, tinggi, rusuksisitegak);
+                System.out.println("\nKeliling Limas Persegi Panjang : "+kbl.keliling());
+                System.out.println("\nVolume Limas Persegi Panjang : "+kbl.keliling());
+                
+                break;
+            }
+            default:{
+            System.out.println("Coba Lagi");
+            break;
+            }
+                     
+        }
+                 
+        if (pilihan !=0){
+        System.out.println();
+        }
+                 
+    }while (pilihan !=0);
+    input.close();
+  }            
+}
