@@ -1,0 +1,33 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package soalnob;
+
+/**
+ *
+ * @author Debora Marianthi
+ */
+public class mian {
+    public static void main(String[] args) {
+        
+        BangunRuang bangunRuang = new BangunRuang();
+        Kubus kubus = new Kubus (4);
+        Balok balok = new Balok (6, 3, 7);
+        LimasPersegiPanjang limaspersegipanjang = new LimasPersegiPanjang (4,8,6,10);
+        
+        // memanggil method luas dan keliling
+        bangunRuang.keliling();
+        bangunRuang.volume();
+        
+        System.out.println("Keliling Kubus: " + kubus.keliling());
+        System.out.println("Volume Kubus: " + kubus.volume());
+        System.out.println("Keliling Balok: " + balok.keliling());
+        System.out.println("Volume Balok: " + balok.volume());
+        System.out.println("Keliling Limas Persegi Panjang: " + limaspersegipanjang.keliling());
+        System.out.println("Volume Limas Persegi Panjang: " + limaspersegipanjang.volume());
+    }
+}
+    
+
